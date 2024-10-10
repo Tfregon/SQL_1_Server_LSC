@@ -1,1 +1,6 @@
-
+SQL Server Management Studio
+1. Create a database in SQL and name it midterm db. (5 points)
+2. Inside of the your database create the following tables as shown in below figure. Note that the key icon shown in below diagram stands for primary key. (45 points)
+3. Insert five random records into each table. (15 points)
+4. Implement one stored procedure for each table and they should delete a specific record according to the given id. (55 points)
+5. Implement one trigger for the Product table and it should get invoked when the user updates any record into this table. (40 points)
