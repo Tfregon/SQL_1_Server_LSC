@@ -1,0 +1,25 @@
+--Q3
+
+create procedure UpdateNameByIdOnTableEvents
+    @EventsId INT,
+    @NewName NVARCHAR(100)
+AS
+BEGIN
+    UPDATE events
+    SET name = @NewName
+    WHERE id = @EventsId;
+END
+
+exec UpdateNameByIdOnTableEvents @EventsId = 1, @NewName = 'partyMaster'
+
+select* from events
+
+create procedure DeleteEventById
+    @EventsId INT
+AS
+BEGIN
+    DELETE FROM events
+    WHERE id = @EventsId;
+END;
+
+exec DeleteEventById @EventsId = 2
