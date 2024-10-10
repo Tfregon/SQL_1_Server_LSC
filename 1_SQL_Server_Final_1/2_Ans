@@ -1,0 +1,52 @@
+--Q2
+
+ALTER TABLE tickets 
+DROP CONSTRAINT fk_tickets_users
+ALTER TABLE tickets 
+DROP CONSTRAINT fk_tickets_teams
+ALTER TABLE users 
+DROP CONSTRAINT FK_users_teams
+ALTER TABLE nps_responses 
+DROP CONSTRAINT FK_nps_responses_users
+ALTER TABLE events 
+DROP CONSTRAINT FK_events_users
+ALTER TABLE events 
+DROP CONSTRAINT fk_events_teams
+
+
+insert into tickets values
+(1, '2023-01-01', '2023-01-02', 1, 'Sender1', 'email1@example.com', 'Message1', 'Open', 'Email', 'Team1', 101, 'Agent1', 201, 'ClosedBy1', 301, 10, 20, 5, 2, 1, 4),
+(2, '2023-01-02', '2023-01-03', 2, 'Sender2', 'email2@example.com', 'Message2', 'Closed', 'Chat', 'Team2', 102, 'Agent2', 202, 'ClosedBy2', 302, 15, 25, 7, 3, 2, 5),
+(3, '2023-01-03', '2023-01-04', 3, 'Sender3', 'email3@example.com', 'Message3', 'Open', 'Phone', 'Team3', 103, 'Agent3', 203, 'ClosedBy3', 303, 12, 18, 6, 1, 0, 3),
+(4, '2023-01-04', '2023-01-05', 4, 'Sender4', 'email4@example.com', 'Message4', 'InProgress', 'Chat', 'Team1', 104, 'Agent4', 204, 'ClosedBy4', 304, 8, 22, 8, 2, 1, 4),
+(5, '2023-01-05', '2023-01-06', 5, 'Sender5', 'email5@example.com', 'Message5', 'Closed', 'Email', 'Team2', 105, 'Agent5', 205, 'ClosedBy5', 305, 14, 28, 9, 3, 0, 2)
+
+insert into users values
+(1, 'FirstName1', 'LastName1', 'email1@example.com', '2023-01-01', '2023-01-02', 301, 'Version1'),
+(2, 'FirstName2', 'LastName2', 'email2@example.com', '2023-01-02', '2023-01-03', 302, 'Version2'),
+(3, 'FirstName3', 'LastName3', 'email3@example.com', '2023-01-03', '2023-01-04', 303, 'Version3'),
+(4, 'FirstName4', 'LastName4', 'email4@example.com', '2023-01-04', '2023-01-05', 304, 'Version4'),
+(5, 'FirstName5', 'LastName5', 'email5@example.com', '2023-01-05', '2023-01-06', 305, 'Version5')
+
+insert into teams values
+( 1,'Team1', 'domain1.com', '2023-01-01', '2023-01-02', 50, 1),
+( 2, 'Team2', 'domain2.com', '2023-01-02', '2023-01-03', 75, 0),
+( 3, 'Team3', 'domain3.com', '2023-01-03', '2023-01-04', 60, 1),
+( 4, 'Team4', 'domain4.com', '2023-01-04', '2023-01-05', 80, 0),
+( 5, 'Team5', 'domain5.com', '2023-01-05', '2023-01-06', 90, 1)
+
+insert into nps_responses values
+(1, '2023-01-01', 1, 29.99, 3, 8, 'Promoter'),
+(2, '2023-01-02', 2, 49.99, 6, 6, 'Passive'),
+(3, '2023-01-03', 3, 39.99, 5, 9, 'Promoter'),
+(4, '2023-01-04', 4, 59.99, 4, 7, 'Passive'),
+(5, '2023-01-05', 5, 79.99, 7, 8, 'Promoter')
+
+insert into events values
+(1, '2023-01-01', 101, 'distinct_id1', 'EventName1', 'Source1', 'Medium1', 301),
+(2, '2023-01-02', 102, 'distinct_id2', 'EventName2', 'Source2', 'Medium2', 302),
+(3, '2023-01-03', 103, 'distinct_id3', 'EventName3', 'Source3', 'Medium3', 303),
+(4, '2023-01-04', 104, 'distinct_id4', 'EventName4', 'Source4', 'Medium4', 304),
+(5, '2023-01-05', 105, 'distinct_id5', 'EventName5', 'Source5', 'Medium5', 305)
+
+select*from teams
