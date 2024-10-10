@@ -1,0 +1,13 @@
+--Q6
+
+select *  from users inner join tickets on users.id = tickets.id
+
+select *  from users left outer join tickets on users.id = tickets.id
+
+select *  from events inner join nps_responses on events.id = nps_responses.id
+
+select *  from events full outer join nps_responses on events.id = nps_responses.id
+
+select *  from tickets inner join users on tickets.id = users.id
+
+Select * from nps_responses right outer join events on nps_responses.id = events.id
