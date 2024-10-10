@@ -1,1 +1,35 @@
+Question #1 (40 Points – 12%):
+Create a new database and name it ‘Final_DB1’. Then, create the below tables inside of your database.
+Note that, the type of each column is mentioned right in front of the column title. Additionally, the key icon
+represents the primary key. Foreign keys are indicated by a thin gray line drawn between tables.
+ If the data type of UUID does not work on your SQL Server, you can use INT.
+ If the data type of TIMESTAMP does not work, you may freely use DATETIME.
+ If the data type of BOOLEAN does not work, you can also use BIT.
 
+Question #2 (55 Points – 16%):
+Insert five random records into each table and discuss if they are normal according to the concepts of
+1NF, 2NF, and 3NF. In case you believe that your tables are not normal, please normalize them as much
+as you can.
+
+Question #3 (65 Points – 19%):
+For a random table inside of your database (whichever you prefer), create two stored procedures,
+respectively for update and delete operations. Demonstrate how your procedures work with providing at
+least one example.
+
+Question #4 (75 Points – 22%):
+Write a query for each of the below questions:
+o Find the min, max, and average of the tickets which each person has purchased.
+o Find the total number of events which a person has enrolled, and his/her name starts with ‘A’.
+LaSalle Collège 5 18/12/2023 (v. 1.7)
+o Count the total number of monthly subscriptions per user.
+
+Question #5 (40 Points – 12%):
+Write a trigger both before and after deleting a record into each table. Please use try-catch block for
+handling potential exceptions.
+
+Question #6 (35 Points – 10%):
+Implement both inner and outer joins for at least three tables. You can choose any three tables from your
+database.
+
+Question #7 (25 Points – 8% + 2% creativity):
+Demonstrate how nested joins work. Then, run it on a table of your choice.
