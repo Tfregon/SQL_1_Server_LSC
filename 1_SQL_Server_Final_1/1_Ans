@@ -1,1 +1,87 @@
+--Q1
+Create Database Final_DB1
 
+Create Table tickets(
+id int not null primary key,
+created_at datetime,
+update_at datetime,
+user_id int,
+sender_name nvarchar(100),
+email nvarchar(100),
+initial_message nvarchar(1000),
+status nvarchar(100),
+channel nvarchar(100),
+team_name nvarchar(200),
+agent_id int,
+agent_name nvarchar(100),
+closed_by_id int,
+closed_by_name nvarchar(100),
+team_id int,
+seconds_to_first_reply int,
+seconds_to_last_close int,
+num_messages int,
+num_escalations int,
+num_reopens int,
+csat_rating int)
+
+create table users(
+id int not null primary key,
+first_name nvarchar(100),
+last_name nvarchar(100),
+email nvarchar(100),
+created_at datetime,
+updated_at datetime,
+team_id int,
+version_number nvarchar(200))
+
+create table teams(
+id int not null primary key,
+name nvarchar(100),
+email_domain nvarchar(100),
+created_at datetime,
+updated_at datetime,
+active_user_count int,
+preferences bit)
+
+create table nps_responses(
+id int not null primary key,
+created_at datetime,
+user_id int,
+monthly_subscription_amt float,
+months_subscribed int,
+nps_response int,
+nps_status nvarchar(100))
+
+create table events(
+id int not null primary key,
+time datetime,
+user_id int,
+distinct_id nvarchar(100),
+name nvarchar (100),
+utm_source nvarchar(100),
+utm_medium nvarchar(100),
+team_id int)
+
+alter table tickets
+add constraint fk_tickets_users foreign key (user_id)
+references users(id);
+
+alter table tickets
+add constraint fk_tickets_teams foreign key (team_id)
+references teams(id);
+
+alter table users
+add constraint FK_users_teams FOREIGN KEY (team_id)
+REFERENCES teams(id);
+
+alter table nps_responses
+add constraint FK_nps_responses_users FOREIGN KEY (user_id)
+references users(id)
+
+alter table events
+add constraint FK_events_users FOREIGN KEY (user_id)
+references users(id)
+
+alter table events
+add constraint fk_events_teams foreign key (team_id)
+references teams(id)
