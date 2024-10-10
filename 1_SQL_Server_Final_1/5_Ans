@@ -1,0 +1,23 @@
+--Q5
+
+create trigger BeforeDeleteUsers ON users instead of delete
+AS
+BEGIN
+    BEGIN TRY
+        PRINT 'Executing before deleting from users table';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error occurred before deleting from users table: ' + ERROR_MESSAGE();
+    END CATCH
+END
+
+create trigger AfterDeleteUseres ON users After Delete
+AS
+BEGIN
+    BEGIN TRY
+        PRINT 'Executing after deleting from users table';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error occurred after deleting from users table: ' + ERROR_MESSAGE();
+    END CATCH
+END
