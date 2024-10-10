@@ -1,0 +1,18 @@
+--Q4 A
+alter table tickets
+add num_tickets int
+
+UPDATE tickets
+SET num_tickets = 10
+WHERE id = 1;
+UPDATE tickets
+SET num_tickets = 17
+WHERE id = 2;
+
+select* from tickets
+select
+    Min(num_tickets) AS min_tickets,
+    Max(num_tickets) AS max_tickets,
+    Avg(num_tickets) AS avg_tickets
+FROM
+    tickets
