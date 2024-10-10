@@ -1,0 +1,4 @@
+--Q7
+
+SELECT tickets.sender_name, users.last_name, nps_responses.nps_status
+FROM tickets JOIN users ON tickets.user_id = users.id JOIN nps_responses ON users.id = nps_responses.user_id
